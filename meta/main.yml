@@ -9,5 +9,3 @@ galaxy_info:
         - All
   categories:
     - system
-dependencies:
-  - franklinkim.nginx

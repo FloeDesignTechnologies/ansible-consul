@@ -30,8 +30,8 @@
 
 - name: copy and unpack
   unarchive: >
-    src={{ consul_download_folder }}/{{ consul_archive }}
-    dest={{ consul_home }}/bin
+    src={{consul_download_folder}}/{{consul_archive}}
+    dest={{consul_home}}/bin
     copy=no
   when: consul_was_downloaded|changed
 
@@ -81,34 +81,7 @@
 - name: consul config file
   template: >
     src=consul.json.j2
-    dest={{ consul_config_file }}
+    dest={{consul_config_file}}
     owner={{consul_user}}
     group={{consul_group}}
     mode=0755
-
-- name: consul config file
-  template: >
-    src=consul-nginx.conf.j2
-    dest=/etc/nginx/sites-available/consul
-    owner=root
-    group=root
-    mode=0755
-
-- name: consul config file
-  file: >
-    state=link
-    src=/etc/nginx/sites-available/consul
-    path=/etc/nginx/sites-enabled/consul
-    owner=root
-    group=root
-    mode=0755
-
-- name: create nginx home
-  file: >
-    state=directory
-    path=/var/www/consul/htdocs
-    owner=root
-    group=root
-    mode=0755
-  notify:
-    - restart nginx

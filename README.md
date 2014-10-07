@@ -15,19 +15,19 @@
 Using `ansible-galaxy`:
 
 ```
-$ ansible-galaxy install savagegus.consul
+$ ansible-galaxy install pheromone.consul
 ```
 
 Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
 
 ```
-$ arm install savagegus.ansible-consul
+$ arm install pheromone.ansible-consul
 ```
 
 Using `git`:
 
 ```
-$ git clone https://github.com/jivesoftware/ansible-consul.git
+$ git clone https://github.com/Pheromone/ansible-consul.git
 ```
 
 ## Variables
